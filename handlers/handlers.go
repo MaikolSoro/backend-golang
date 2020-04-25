@@ -7,6 +7,7 @@ import (
 
 	"github.com/gorilla/mux"
 	"github.com/maikol/backend-golang/middlew"
+	"github.com/maikol/backend-golang/routers"
 	"github.com/rs/cors"
 )
 
@@ -14,7 +15,7 @@ import (
 func Manejadores() {
 	router := mux.NewRouter()
 
-	router.HandlerFunc("/registro", middlew.ChequeoBD(routers.Registro)).Methods("POST")
+	router.HandleFunc("/registro", middlew.ChequeoBD(routers.Registro)).Methods("POST")
 
 	PORT := os.Getenv("PORT")
 	if PORT == "" {

@@ -4,11 +4,12 @@ import (
 	"encoding/json"
 	"net/http"
 
+	"github.com/maikol/backend-golang/bd"
 	"github.com/maikol/backend-golang/models"
 )
 
-/*registroUsuario es la funcion para crear en la BD, el registro de usuario */
-func registroUsuario(w http.ResponseWriter, r *http.Request) {
+/*Registro es la funcion para crear en la BD, el registro de usuario */
+func Registro(w http.ResponseWriter, r *http.Request) {
 
 	var t models.Usuario
 	err := json.NewDecoder(r.Body).Decode(&t)

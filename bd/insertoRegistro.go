@@ -8,8 +8,8 @@ import (
 	"go.mongodb.org/mongo-driver/bson/primitive"
 )
 
-/*InsertarRegistro es la parada final con la BD, para insertar los datos del usuario */
-func InsertarRegistro(u models.Usuario) (string, bool, error) {
+/*InsertoRegistro es la parada final con la BD, para insertar los datos del usuario */
+func InsertoRegistro(u models.Usuario) (string, bool, error) {
 	ctx, cancel := context.WithTimeout(context.Background(), 15*time.Second)
 	defer cancel()
 
@@ -20,11 +20,11 @@ func InsertarRegistro(u models.Usuario) (string, bool, error) {
 
 	result, err := col.InsertOne(ctx, u)
 
-	if err != null {
+	if err != nil {
 		return "", false, err
 	}
 
-	ObjID, _ := result.InsertID.(primitive.ObjID)
+	ObjID, _ := result.InsertedID.(primitive.ObjectID)
 
 	return ObjID.String(), true, nil
 
