@@ -17,7 +17,7 @@ var IDUsuario string
 
 /*ProcesoToken proceso token para extraer sus valores */
 func ProcesoToken(tk string) (*models.Claim, bool, string, error) {
-	miClave := []byte("MastersdelDesarrollo_grupodeFacebook")
+	miClave := []byte("Golang_backendksstrqallxzz")
 	claims := &models.Claim{}
 
 	splitToken := strings.Split(tk, "Bearer")

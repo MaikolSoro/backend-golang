@@ -10,7 +10,7 @@ import (
 /*GeneroJWT genera el encriptado con JWT */
 func GeneroJWT(t models.Usuario) (string, error) {
 
-	miClave := []byte("Golang-backendksstrqallxzz")
+	miClave := []byte("Golang_backendksstrqallxzz")
 
 	payload := jwt.MapClaims{
 		"email":            t.Email,
