@@ -44,6 +44,9 @@ func Manejadores() {
 	// LISTAR USUARIOS
 	router.HandleFunc("/listarUsuarios", middlew.ChequeoBD(middlew.ValidoJWT(routers.ListaUsuarios))).Methods("GET")
 
+	//	MOSTRAR TWEETS SEGUIDORES
+	router.HandleFunc("/obtenerTweetsSeguidores", middlew.ChequeoBD(middlew.ValidoJWT(routers.MostrarTweetsSeguidores))).Methods("GET")
+
 	PORT := os.Getenv("PORT")
 	if PORT == "" {
 		PORT = "8080"

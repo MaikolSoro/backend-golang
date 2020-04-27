@@ -14,7 +14,7 @@ func ObtenerTweets(ID string, pagina int64) ([]*models.ObtenerTweets, bool) {
 
 	ctx, cancel := context.WithTimeout(context.Background(), 15*time.Second)
 	defer cancel()
-	db := MongoCN.Database("Twittor")
+	db := MongoCN.Database("twittor")
 	col := db.Collection("tweet")
 
 	var resultados []*models.ObtenerTweets
