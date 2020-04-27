@@ -41,6 +41,9 @@ func Manejadores() {
 	router.HandleFunc("/deleteRelacion", middlew.ChequeoBD(middlew.ValidoJWT(routers.EliminarRelacion))).Methods("DELETE")
 	router.HandleFunc("/obtenerRelacion", middlew.ChequeoBD(middlew.ValidoJWT(routers.ObtenerRelacion))).Methods("GET")
 
+	// LISTAR USUARIOS
+	router.HandleFunc("/listarUsuarios", middlew.ChequeoBD(middlew.ValidoJWT(routers.ListaUsuarios))).Methods("GET")
+
 	PORT := os.Getenv("PORT")
 	if PORT == "" {
 		PORT = "8080"
